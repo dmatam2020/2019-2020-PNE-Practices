@@ -6,8 +6,8 @@ PRACTICE = 2
 EXERCISE = 4
 
 print(f"----|Practice {PRACTICE}, Exercise {EXERCISE}|----")
-IP = "127.0.0.1"
-PORT = 52123
+IP = "192.168.0.241"
+PORT = 139
 c = Client(IP, PORT)
 
 c.debug_talk("Message 1---")
