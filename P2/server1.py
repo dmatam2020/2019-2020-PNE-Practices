@@ -1,4 +1,6 @@
 import socket
+import colorama
+import termcolor
 
 # Configure the Server's IP and PORT
 PORT = 52123
@@ -17,6 +19,7 @@ try:
     serversocket.listen(MAX_OPEN_REQUESTS)
 
     while True:
+        colorama.init(strip='False')
         # accept connections from outside
         print("Waiting for connections at {}, {} ".format(IP, PORT))
         (clientsocket, address) = serversocket.accept()
@@ -39,7 +42,7 @@ try:
         clientsocket.close()
 
 except socket.error:
-    print("Problems using port {}. Do you have permission?".format(PORT))
+    print("roblems using port {}. Do you have permission?".format(PORT))
 
 except KeyboardInterrupt:
     print("Server stopped by the user")

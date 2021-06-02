@@ -6,15 +6,17 @@ PRACTICE = 2
 EXERCISE = 7
 
 print(f"----|Practice {PRACTICE}, Exercise {EXERCISE}|----")
+
 IP = "192.168.0.241"
 PORT = 139
 PORT_2 = 25625
+
 c = Client(IP, PORT)
 c_2 = Client(IP, PORT_2)
 
 
 s1 = Seq()
-s1.read_fasta("../Session 4/FRAT1")
+s1.read_fasta("../P2/FRAT1.txt")
 
 count = 0
 i = 0

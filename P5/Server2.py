@@ -3,11 +3,12 @@ import socketserver
 import termcolor
 import pathlib
 import jinja2
+
 def read_template_html_file(filename):
     content = jinja2.Template(pathlib.Path(filename).read_text())
     return content
 
-PORT = 8081
+PORT = 8080
 
 BASES_INFORMATION = {
     'A': {'link': "https://en.wikipedia.org/wiki/Adenine",

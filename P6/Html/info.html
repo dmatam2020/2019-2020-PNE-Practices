@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Seq server</title>
+    </head>
+    <body>
+        <h1>Sequence</h1>
+        {{context.gene_contents}}
+        <h1>Operation:</h1>
+        Info
+        <h1>Result:</h1>
+        Total length: {{context.gene_contents_len}}
+        <br>
+        A: {{context.bases[0]}}({{context.percentage_bases[0]}}%)
+        <br>
+        C: {{context.bases[1]}}({{context.percentage_bases[1]}}%)
+        <br>
+        G: {{context.bases[2]}}({{context.percentage_bases[2]}}%)
+        <br>
+        T: {{context.bases[3]}}({{context.percentage_bases[3]}}%)
+        <br>
+        <br>
+        <br>
+        <a href="/">Main page</a>
+    </body>
+</html>

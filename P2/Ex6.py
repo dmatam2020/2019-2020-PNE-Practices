@@ -12,7 +12,7 @@ c = Client(IP, PORT)
 
 
 s1 = Seq()
-s1.read_fasta("../Session 4/FRAT1")
+s1.read_fasta("../P2/FRAT1.txt")
 
 count = 0
 i = 0
