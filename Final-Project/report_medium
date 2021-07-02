@@ -1,3 +1,6 @@
+REPORT MEDIUM
+
+
 - - - -> Gene Seq Endpoint
 
 *TEST 1
@@ -213,6 +216,860 @@
     <p>The % of base C is: 21.709</p>
     <p>The % of base G is: 20.541</p>
     <p>The % of base T is: 28.446</p>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+TESTING AGAIN THE BASIC SERVICES TO CHECK EVERYTHING STILL WORKS
+
+
+
+
+---> / endpoint
+*TEST 1
+
+*Input
+    http://127.0.0.1:8080/
+
+*Output
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Welcome!! </title>
+</head>
+<body style="background-color: #7bea93;">
+    <h1> Browsing Human and Vertebrates Genome </h1>
+    <h2>Basic level services</h2>
+    <p> 1) List of species in the genome database </p>
+    <form action="listSpecies" method="get">
+        Limit: <input type="text" name="limit">
+        <br> <br> <input type="submit" value="Send">
+    </form>
+
+    <p> 2) Information about the karyotype: </p>
+    <form action="karyotype" method="get">
+        Select the species: <input type="text" name="specie">
+        <br> <br> <input type="submit" value="Send">
+    </form>
+
+    <p> 3) Chromosome length </p>
+    <form action="chromosomeLength" method="get">
+        Select the species: <input type="text" name="specie">
+        <form action="length" method="get"> <br><br>
+        Select a chromosome: <input type="text" name="chromo">
+        <br> <br> <input type="submit" value="Send">
+    </form> </form>
+    <h2>Medium level services</h2>
+    <p> 1) Sequence of human gene </p>
+    <form action="geneSeq" method="get">
+        Select a human gene: <input type="text" name="gene">
+        <br> <br> <input type="submit" value="Send">
+    </form>
+
+    <p> 2) Information about human gene: </p>
+    <form action="geneInfo" method="get">
+        Select a human gene: <input type="text" name="gene_info">
+        <br> <br> <input type="submit" value="Send">
+    </form>
+
+    <p> 3) Human gene calculations </p>
+    <form action="geneCalc" method="get">
+        Select a human gene: <input type="text" name="gene_calculations">
+        <br> <br> <input type="submit" value="Send">
+    </form>
+</html>
+
+
+- - - -> List species endpoint
+
+*TEST 1
+
+*Input:
+          http://127.0.0.1:8080/listSpecies?limit=10
+
+*Output:
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LIST OF SPECIES IN THE BROWSER</title>
+  </head>
+  <body style="background-color: #b1aefc;">
+    <p>The total number of species in the ensembl is: 310</p>
+    <p>The limit you have selected is: 10</p>
+    <p>The names of the species are:
+
+      <ul>
+        <li>American pika</li>
+    </ul>
+
+      <ul>
+        <li>pig</li>
+    </ul>
+
+      <ul>
+        <li>green anole</li>
+    </ul>
+
+      <ul>
+        <li>blunt-snouted clingfish</li>
+    </ul>
+
+      <ul>
+        <li>northern pike</li>
+    </ul>
+
+      <ul>
+        <li>clown anemonefish</li>
+    </ul>
+
+      <ul>
+        <li>Siamese fighting fish</li>
+    </ul>
+
+      <ul>
+        <li>coho salmon</li>
+    </ul>
+
+      <ul>
+        <li>common carp german mirror</li>
+    </ul>
+
+      <ul>
+        <li>Bengalese finch</li>
+    </ul>
+
+    </p>
+
+  </body>
+</html>
+
+
+
+*TEST 2
+
+
+*Input:
+    http://127.0.0.1:8080/listSpecies?limit=2
+
+*Output:
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LIST OF SPECIES IN THE BROWSER</title>
+  </head>
+  <body style="background-color: #b1aefc;">
+    <p>The total number of species in the ensembl is: 310</p>
+    <p>The limit you have selected is: 2</p>
+    <p>The names of the species are:
+
+      <ul>
+        <li>yellowtail amberjack</li>
+    </ul>
+
+      <ul>
+        <li>lumpfish</li>
+    </ul>
+
+    </p>
+
+  </body>
+</html>
+
+
+*TEST 3
+
+
+*Input:
+    http://127.0.0.1:8080/listSpecies?limit=25
+
+*Output:
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LIST OF SPECIES IN THE BROWSER</title>
+  </head>
+  <body style="background-color: #b1aefc;">
+    <p>The total number of species in the ensembl is: 310</p>
+    <p>The limit you have selected is: 25</p>
+    <p>The names of the species are:
+
+      <ul>
+        <li>African green monkey</li>
+    </ul>
+
+      <ul>
+        <li>Asiatic black bear</li>
+    </ul>
+
+      <ul>
+        <li>sea lamprey</li>
+    </ul>
+
+      <ul>
+        <li>fruit fly</li>
+    </ul>
+
+      <ul>
+        <li>pike-perch</li>
+    </ul>
+
+      <ul>
+        <li>Norway rat</li>
+    </ul>
+
+      <ul>
+        <li>common wombat</li>
+    </ul>
+
+      <ul>
+        <li>Indian glassy fish</li>
+    </ul>
+
+      <ul>
+        <li>Lesser Egyptian jerboa</li>
+    </ul>
+
+      <ul>
+        <li>jewelled blenny</li>
+    </ul>
+
+      <ul>
+        <li>platypus</li>
+    </ul>
+
+      <ul>
+        <li>mouse</li>
+    </ul>
+
+      <ul>
+        <li>red fox</li>
+    </ul>
+
+      <ul>
+        <li>Atlantic cod</li>
+    </ul>
+
+      <ul>
+        <li>pig</li>
+    </ul>
+
+      <ul>
+        <li>American black bear</li>
+    </ul>
+
+      <ul>
+        <li>southern platyfish</li>
+    </ul>
+
+      <ul>
+        <li>dog</li>
+    </ul>
+
+      <ul>
+        <li>Inshore hagfish</li>
+    </ul>
+
+      <ul>
+        <li>Tasmanian devil</li>
+    </ul>
+
+      <ul>
+        <li>muscovy Duck (domestic type)</li>
+    </ul>
+
+      <ul>
+        <li>lyretail cichlid</li>
+    </ul>
+
+      <ul>
+        <li>sperm whale</li>
+    </ul>
+
+      <ul>
+        <li>Canada lynx</li>
+    </ul>
+
+      <ul>
+        <li>Goat</li>
+    </ul>
+
+    </p>
+
+  </body>
+</html>
+
+
+*TEST 4
+
+*Input:
+    http://127.0.0.1:8080/listSpecies?limit=7
+
+*Output:
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LIST OF SPECIES IN THE BROWSER</title>
+  </head>
+  <body style="background-color: #b1aefc;">
+    <p>The total number of species in the ensembl is: 310</p>
+    <p>The limit you have selected is: 7</p>
+    <p>The names of the species are:
+
+      <ul>
+        <li>yellowtail amberjack</li>
+    </ul>
+
+      <ul>
+        <li>lumpfish</li>
+    </ul>
+
+      <ul>
+        <li>eastern brown snake</li>
+    </ul>
+
+      <ul>
+        <li>Ryukyu mouse</li>
+    </ul>
+
+      <ul>
+        <li>silver-eye</li>
+    </ul>
+
+      <ul>
+        <li>turbot</li>
+    </ul>
+
+      <ul>
+        <li>pig</li>
+    </ul>
+
+    </p>
+
+  </body>
+</html>
+
+
+*TEST 5
+
+*Input:
+    http://127.0.0.1:8080/listSpecies?limit=3
+
+*Output:
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LIST OF SPECIES IN THE BROWSER</title>
+  </head>
+  <body style="background-color: #b1aefc;">
+    <p>The total number of species in the ensembl is: 310</p>
+    <p>The limit you have selected is: 3</p>
+    <p>The names of the species are:
+
+      <ul>
+        <li>yellowtail amberjack</li>
+    </ul>
+
+      <ul>
+        <li>lumpfish</li>
+    </ul>
+
+      <ul>
+        <li>eastern brown snake</li>
+    </ul>
+
+    </p>
+
+  </body>
+</html>
+
+
+- - - -> Karyotype endpoint
+
+*TEST 1
+
+*Input:
+        http://127.0.0.1:8080/karyotype?specie=human
+
+*Output:
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>KARYOTYPE OF A SPECIFIC SPECIES</title>
+  </head>
+  <body style="background-color: #f0f353;">
+   <p>The names of the chromosomes are:
+
+      <ul>
+     1
+    </ul>
+
+      <ul>
+     2
+    </ul>
+
+      <ul>
+     3
+    </ul>
+
+      <ul>
+     4
+    </ul>
+
+      <ul>
+     5
+    </ul>
+
+      <ul>
+     6
+    </ul>
+
+      <ul>
+     7
+    </ul>
+
+      <ul>
+     8
+    </ul>
+
+      <ul>
+     9
+    </ul>
+
+      <ul>
+     10
+    </ul>
+
+      <ul>
+     11
+    </ul>
+
+      <ul>
+     12
+    </ul>
+
+      <ul>
+     13
+    </ul>
+
+      <ul>
+     14
+    </ul>
+
+      <ul>
+     15
+    </ul>
+
+      <ul>
+     16
+    </ul>
+
+      <ul>
+     17
+    </ul>
+
+      <ul>
+     18
+    </ul>
+
+      <ul>
+     19
+    </ul>
+
+      <ul>
+     20
+    </ul>
+
+      <ul>
+     21
+    </ul>
+
+      <ul>
+     22
+    </ul>
+
+      <ul>
+     X
+    </ul>
+
+      <ul>
+     Y
+    </ul>
+
+      <ul>
+     MT
+    </ul>
+
+    </p>
+  </body>
+</html>
+
+
+*TEST 2
+
+
+*Input:
+        http://127.0.0.1:8080/karyotype?specie=dog
+
+*Output:
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>KARYOTYPE OF A SPECIFIC SPECIES</title>
+  </head>
+  <body style="background-color: #f0f353;">
+   <p>The names of the chromosomes are:
+
+      <ul>
+     1
+    </ul>
+
+      <ul>
+     2
+    </ul>
+
+      <ul>
+     3
+    </ul>
+
+      <ul>
+     4
+    </ul>
+
+      <ul>
+     5
+    </ul>
+
+      <ul>
+     6
+    </ul>
+
+      <ul>
+     7
+    </ul>
+
+      <ul>
+     8
+    </ul>
+
+      <ul>
+     9
+    </ul>
+
+      <ul>
+     10
+    </ul>
+
+      <ul>
+     11
+    </ul>
+
+      <ul>
+     12
+    </ul>
+
+      <ul>
+     13
+    </ul>
+
+      <ul>
+     14
+    </ul>
+
+      <ul>
+     15
+    </ul>
+
+      <ul>
+     16
+    </ul>
+
+      <ul>
+     17
+    </ul>
+
+      <ul>
+     18
+    </ul>
+
+      <ul>
+     19
+    </ul>
+
+      <ul>
+     20
+    </ul>
+
+      <ul>
+     21
+    </ul>
+
+      <ul>
+     22
+    </ul>
+
+      <ul>
+     23
+    </ul>
+
+      <ul>
+     24
+    </ul>
+
+      <ul>
+     25
+    </ul>
+
+      <ul>
+     26
+    </ul>
+
+      <ul>
+     27
+    </ul>
+
+      <ul>
+     28
+    </ul>
+
+      <ul>
+     29
+    </ul>
+
+      <ul>
+     30
+    </ul>
+
+      <ul>
+     31
+    </ul>
+
+      <ul>
+     32
+    </ul>
+
+      <ul>
+     33
+    </ul>
+
+      <ul>
+     34
+    </ul>
+
+      <ul>
+     35
+    </ul>
+
+      <ul>
+     36
+    </ul>
+
+      <ul>
+     37
+    </ul>
+
+      <ul>
+     38
+    </ul>
+
+      <ul>
+     X
+    </ul>
+
+      <ul>
+     MT
+    </ul>
+
+    </p>
+  </body>
+</html>
+
+
+*TEST 3
+
+*Input:
+        http://127.0.0.1:8080/karyotype?specie=pig
+
+*Output:
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>KARYOTYPE OF A SPECIFIC SPECIES</title>
+  </head>
+  <body style="background-color: #f0f353;">
+   <p>The names of the chromosomes are:
+
+      <ul>
+     1
+    </ul>
+
+      <ul>
+     2
+    </ul>
+
+      <ul>
+     3
+    </ul>
+
+      <ul>
+     4
+    </ul>
+
+      <ul>
+     5
+    </ul>
+
+      <ul>
+     6
+    </ul>
+
+      <ul>
+     7
+    </ul>
+
+      <ul>
+     8
+    </ul>
+
+      <ul>
+     9
+    </ul>
+
+      <ul>
+     10
+    </ul>
+
+      <ul>
+     11
+    </ul>
+
+      <ul>
+     12
+    </ul>
+
+      <ul>
+     13
+    </ul>
+
+      <ul>
+     14
+    </ul>
+
+      <ul>
+     15
+    </ul>
+
+      <ul>
+     16
+    </ul>
+
+      <ul>
+     17
+    </ul>
+
+      <ul>
+     18
+    </ul>
+
+      <ul>
+     X
+    </ul>
+
+      <ul>
+     Y
+    </ul>
+
+      <ul>
+     MT
+    </ul>
+
+    </p>
+  </body>
+</html>
+
+
+- - - -> Chromosome length endpoint
+
+
+*TEST 1
+
+
+*Input:
+    http://127.0.0.1:8080/chromosomeLength?specie=mouse&chromo=2
+
+*Output:
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LENGTH OF THE SELECTED CHROMOSOME</title>
+  </head>
+  <body style="background-color: #ffa5d8;">
+    <p>The length of the chromosome is: 181755017</p>
+  </body>
+</html>
+
+
+*TEST 2
+
+
+*Input:
+    http://127.0.0.1:8080/chromosomeLength?specie=human&chromo=18
+
+*Output:
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LENGTH OF THE SELECTED CHROMOSOME</title>
+  </head>
+  <body style="background-color: #ffa5d8;">
+    <p>The length of the chromosome is: 80373285</p>
+  </body>
+</html>
+
+
+*TEST 3
+
+
+*Input:
+    http://127.0.0.1:8080/chromosomeLength?specie=dog&chromo=x
+
+*Output:
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LENGTH OF THE SELECTED CHROMOSOME</title>
+  </head>
+  <body style="background-color: #ffa5d8;">
+    <p>The length of the chromosome is: 123869142</p>
   </body>
 </html>
 
