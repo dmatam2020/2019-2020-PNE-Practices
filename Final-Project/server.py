@@ -38,6 +38,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
             contents = read_template_html_file("index.html").render()
 
         elif path_name == "/listSpecies":
+            chk = "chk" in arguments
             try:
                 ENDPOINT = "info/species"
                 connection = http.client.HTTPConnection(SERVER)
@@ -53,6 +54,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
                         list_species.append(species)
                 context["input_number"] = limit
                 list_final_species = []
+
                 try:
                     integer_limit = int(limit)
                 except ValueError:
@@ -63,13 +65,14 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
                 context["length"] = len(list_species)
                 context["species_list"] = list_final_species
-                if "json" in arguments:
+                if "json" in arguments or chk:
                     contents = json.dumps(context)
                     content_type = "application/json"
                 else:
                     contents = read_template_html_file("list_species.html").render(context=context)
             except:
                     contents = read_template_html_file("error.html").render()
+
 
 
         elif path_name == "/karyotype":

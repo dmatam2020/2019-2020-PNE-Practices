@@ -44,7 +44,7 @@ def process_client(s):
     header = "Content-Type: text/html\n"
 
     if path_name == '/':
-        body = read_html_file(HTML_ASSETS + 'Index.html')
+        body = read_html_file(HTML_ASSETS + 'index.html')
     elif '/info/' in path_name:
         #where is the letter? string.split('/')[-1]
         try:
